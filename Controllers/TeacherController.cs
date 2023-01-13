@@ -6,7 +6,10 @@ namespace Gestion_note.Controllers
     {
         public IActionResult Index()
         {
+
             return View();
         }
+
+
     }
 }
