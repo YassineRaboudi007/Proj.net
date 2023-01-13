@@ -10,6 +10,13 @@ namespace Gestion_note.Controllers
             return View();
         }
 
+        public IActionResult Add()
+        {
+
+            return View();
+        }
+
+
 
     }
 }
