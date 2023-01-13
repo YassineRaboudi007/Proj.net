@@ -8,11 +8,11 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Gestion_note
 build_property.RootNamespace = Gestion_note
-build_property.ProjectDir = C:\Users\souma\source\repos\Proj.net\
+build_property.ProjectDir = C:\Users\souma\Source\Repos\Proj.net\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\souma\source\repos\Proj.net
+build_property.MSBuildProjectDirectory = C:\Users\souma\Source\Repos\Proj.net
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/souma/source/repos/Proj.net/Views/Auth/Login.cshtml]

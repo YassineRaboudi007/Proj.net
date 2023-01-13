@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\Desktop\\Learning\\Projects\\microservices_project\\Gestion_note\\Gestion_note\\Gestion_note.csproj": {}
+    "C:\\Users\\souma\\source\\repos\\Proj.net\\Gestion_note.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\Desktop\\Learning\\Projects\\microservices_project\\Gestion_note\\Gestion_note\\Gestion_note.csproj": {
+    "C:\\Users\\souma\\source\\repos\\Proj.net\\Gestion_note.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\Learning\\Projects\\microservices_project\\Gestion_note\\Gestion_note\\Gestion_note.csproj",
+        "projectUniqueName": "C:\\Users\\souma\\source\\repos\\Proj.net\\Gestion_note.csproj",
         "projectName": "Gestion_note",
-        "projectPath": "C:\\Users\\Dell\\Desktop\\Learning\\Projects\\microservices_project\\Gestion_note\\Gestion_note\\Gestion_note.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Desktop\\Learning\\Projects\\microservices_project\\Gestion_note\\Gestion_note\\obj\\",
+        "projectPath": "C:\\Users\\souma\\source\\repos\\Proj.net\\Gestion_note.csproj",
+        "packagesPath": "C:\\Users\\souma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\souma\\source\\repos\\Proj.net\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\souma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,18 +39,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.0.2, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.2, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -70,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
