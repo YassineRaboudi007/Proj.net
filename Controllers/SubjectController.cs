@@ -44,7 +44,8 @@ namespace Gestion_note.Controllers
             {
                 _unitOfWork.Complete();
             }
-            return View(matiere);
+            return RedirectToAction("Index");
+
         }
 
         [Route("Add")]
@@ -55,11 +56,11 @@ namespace Gestion_note.Controllers
         }
 
 
-        
-
+        [Route("Add")]
         [HttpPost]
         public IActionResult Add(Matiere matiere)
         {
+           
             if (matiere.Name != null & matiere.Coefficent != null)
             {
                 matiere.Id = Guid.NewGuid();
@@ -74,7 +75,7 @@ namespace Gestion_note.Controllers
 
 
             }
-            return View();
+            return RedirectToAction("Index");
         }
 
 
