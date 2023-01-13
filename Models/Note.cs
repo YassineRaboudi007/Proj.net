@@ -4,8 +4,8 @@
     {
         public int Id { get; set; }
         public double NoteDevoir { get; set; }
-        
-        public Student student { get; set; }
-        public Matiere matiere { get; set; }
+        public string TypeExam { get; set; }
+        public Student Student { get; set; }
+        public Matiere Matiere { get; set; }
     }
 }

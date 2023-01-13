@@ -1,0 +1,30 @@
+﻿@model List<Gestion_note.Models.Filier>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Filier Name</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var filier in Model)
+        {
+            <tr>
+                <th scope="row">2</th>
+                <td>@filier.Id</td>
+                <td>@filier.Name</td>
+                <td>
+                    <button type="button" class="btn btn-primary">
+                        <a href="/Student/Index" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">See Student List</a>
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,6 +1,9 @@
-﻿namespace Gestion_note.Data.StudentRepo
+﻿using Gestion_note.Models;
+
+namespace Gestion_note.Data.StudentRepo
 {
-    public interface Interface
+    public interface IStudentRepo : IRepository<Student>
     {
+
     }
 }

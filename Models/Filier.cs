@@ -10,7 +10,5 @@ namespace Gestion_note.Models
         public string Name { get; set; }
         public List<Student> Students { get; set; }
         public List<Matiere> Matieres { get; set; }
-
-
     }
 }
