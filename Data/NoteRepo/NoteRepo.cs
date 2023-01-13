@@ -6,25 +6,30 @@ namespace Gestion_note.Data.NoteRepo
 {
     public class NoteRepo : Repository<Note>, INoteRepo
     {
-        readonly AppDbContext _appDbContext;
+        private readonly AppDbContext _appDbContext;
         public NoteRepo(AppDbContext appDbContext) : base(appDbContext)
         {
             _appDbContext = appDbContext;
         }
 
-        public double GetNoteAvgForMatiere(int idMatiere, string type)
+        public double GetNoteAvgForMatiere(int idMatiere, string type, Note n)
         {
             return _appDbContext.Notes
                 .Include(n => n.Matiere)
-                .Where(n => n.Matiere.Id == idMatiere & n.TypeExam == type)
+                .Where(n => n.Matiere.Id.ToString() == idMatiere.ToString() & n.TypeExam == type)
                 .Select(n => n.NoteDevoir).FirstOrDefault();
+        }
+
+        public double GetNoteAvgForMatiere(int idMatiere, string type)
+        {
+            throw new NotImplementedException();
         }
 
         public double GetNoteAvgForStudent(int idStudent)
         {
             return _appDbContext.Notes
                 .Include(n => n.Student)
-                .Where(n => n.Student.Id == idStudent)
+                .Where(n => n.Student.Id.ToString() == idStudent.ToString())
                 .Average(n => n.NoteDevoir);
         }
 
@@ -32,7 +37,7 @@ namespace Gestion_note.Data.NoteRepo
         {
             return _appDbContext.Notes
                 .Include(n => n.Student)
-                .Where(n => n.Student.Id == idStudent & n.TypeExam == type)
+                .Where(n => n.Student.Id.ToString() == idStudent.ToString() & n.TypeExam == type)
                 .Select(n => n.NoteDevoir).FirstOrDefault();
         }
     }

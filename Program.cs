@@ -1,11 +1,15 @@
 using Gestion_note.Data;
+using Gestion_note.Data.NoteRepo;
+using Gestion_note.Data.StudentRepo;
+using Gestion_note.Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddTransient<IMatiereRepo, MatiereRepo>();
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PROJ_CONN_STRING"))

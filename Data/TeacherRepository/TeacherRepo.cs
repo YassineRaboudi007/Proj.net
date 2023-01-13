@@ -15,7 +15,7 @@ namespace Gestion_note.Data.TeacherRepository
         {
             return _appDbContext.Teachers
                 .Include(t => t.Filiers)
-                .Where(t => t.Id == teacherID).ToList();
+                .Where(t => t.Id.ToString() == teacherID.ToString()).ToList();
         }
     }
 }

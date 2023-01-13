@@ -1,0 +1,38 @@
+﻿@model List<Gestion_note.Models.Matiere>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Filier Name</th>
+            <th scope="col" >Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+
+        @foreach(var filier in Model)
+        {
+            
+            <tr class="w-100">
+                <td>@filier.Id</td>
+                <td>@filier.Coefficent</td>
+                <td class="float-start">
+                    <button type="button" class="btn btn-primary btn-small float-end" onclick="location.href='@Url.Action("Index", "Student")'">
+                        See Student List
+                    </button>
+                    <button type="button" class="btn btn-warning btn-small float-end mx-3" onclick="location.href='@Url.Action("Edit", "Subject",new { id = filier.Id })'">
+                        Edit Subject
+                    </button>
+                </td>
+            </tr>
+            
+        }
+        
+
+    </tbody>
+</table>

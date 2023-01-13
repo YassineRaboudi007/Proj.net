@@ -11,9 +11,9 @@ namespace Gestion_note.Data.Repository
         {
             _appDbContext = appDbContext;
         }
-        public T Get(int id)
+        public T Get(string id)
         {
-            return _appDbContext.Set<T>().Find(id);
+            return _appDbContext.Set<T>().Find(Guid.Parse(id));
         }
 
         public IEnumerable<T> GetAll()
