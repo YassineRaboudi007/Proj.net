@@ -8,11 +8,11 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Gestion_note
 build_property.RootNamespace = Gestion_note
-build_property.ProjectDir = C:\Users\souma\source\repos\Proj.net\
+build_property.ProjectDir = C:\Users\souma\Source\Repos\Proj.net\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\souma\source\repos\Proj.net
+build_property.MSBuildProjectDirectory = C:\Users\souma\Source\Repos\Proj.net
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/souma/source/repos/Proj.net/Views/Auth/Login.cshtml]
@@ -39,15 +39,7 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-<<<<<<< HEAD
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Teacher/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/_ViewImports.cshtml]
-=======
 [C:/Users/souma/source/repos/Proj.net/Views/_ViewImports.cshtml]
->>>>>>> 1e8f6d1fae51e31db0c2dbad77fd3f2f00c3714a
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
