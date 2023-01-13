@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Gestion_note.Data.StudentRepo;
+using System.ComponentModel.DataAnnotations;
 
 namespace Gestion_note.Models
 {
@@ -7,7 +8,8 @@ namespace Gestion_note.Models
         [Key]
         public int Id { get; set; }            
         public string Name { get; set; }
-        public Class StudentClass { get; set; }
+        public List<Student> Students { get; set; }
+        public List<Matiere> Matieres { get; set; }
 
 
     }
