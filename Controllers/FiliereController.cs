@@ -4,9 +4,15 @@ namespace Gestion_note.Controllers
 {
     public class FiliereController : Controller
     {
-        public IActionResult Index()
+
+        [HttpGet]
+        [Route("/All")]
+        public IActionResult All()
         {
-            return View();
+            UnitOfWork unitOfWork = new UnitOfWork(AppContext.Instance);
+            List<Filiere> filiere = unitOfWork.Filiere.GetAll().ToList();
+            return View(filiere);
         }
+
     }
 }
