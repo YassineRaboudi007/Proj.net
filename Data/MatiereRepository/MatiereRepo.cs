@@ -2,7 +2,7 @@
 using Gestion_note.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Gestion_note.Data.NoteRepo
+namespace Gestion_note.Data.MatiereRepo
 {
     public class MatiereRepo : Repository<Matiere>, IMatiereRepo
     {

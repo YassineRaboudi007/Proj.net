@@ -1,7 +1,8 @@
-﻿using Gestion_note.Data.FilierRepository;
+﻿using Gestion_note.Data.FiliereRepo;
 using Gestion_note.Data.NoteRepo;
 using Gestion_note.Data.StudentRepo;
 using Gestion_note.Data.UnitOfWork;
+using Gestion_note.DTO;
 using Gestion_note.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -12,8 +13,8 @@ namespace Gestion_note.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IStudentRepo _studentRepo;
-        private readonly IFilierRepo _filierRepo;
-        public StudentController(IStudentRepo studentRepo, IUnitOfWork unitOfWork,IFilierRepo filierRepo)
+        private readonly IFiliereRepo _filierRepo;
+        public StudentController(IStudentRepo studentRepo, IUnitOfWork unitOfWork,IFiliereRepo filierRepo)
         {
             _unitOfWork = unitOfWork;
             _studentRepo = studentRepo;
@@ -23,7 +24,7 @@ namespace Gestion_note.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            IEnumerable<Student> allStudents = _studentRepo.GetAll();
+            IEnumerable<Student> allStudents = _studentRepo.GetStudentsWithFilier();
             return View(allStudents);
         }
 
@@ -32,27 +33,32 @@ namespace Gestion_note.Controllers
         [Route("Edit/{id}")]
         public IActionResult Edit(string id)
         {
-            Student matiere = _studentRepo.Get(id);
-            return View(matiere);
+            Student student = _studentRepo.GetStudentWithFilier(id);
+            Console.WriteLine(student);
+            IEnumerable<Filier> filiers = _filierRepo.GetAll();
+            ViewBag.Filier = filiers;
+            return View(student);
         }
 
         [HttpPost]
         [Route("Edit/{id}")]
-        public IActionResult Edit(Student stdn,int filier, string id)
+        public IActionResult Edit(Student student,string FilierId, string id)
         {
-            Student student = _studentRepo.Get(id);
-            student.Name = stdn.Name;
-            student.Email = stdn.Email;
-            student.Password = stdn.Password;
-            if (filier == 0)
+            Student currStudent = _studentRepo.Get(id);
+            currStudent.Name = student.Name;
+            currStudent.Email = student.Email;
+            currStudent.Password = student.Password;
+            if (FilierId == "-1")
             {
                 student.StudentFilier = null;
             }
             else
             {
+                student.StudentFilier = _filierRepo.Get(FilierId);
+
                 student.StudentFilier = null;
             }
-            student.Email = stdn.Email;
+            currStudent.Email = student.Email;
             using (_unitOfWork)
             {
                 _unitOfWork.Complete();
@@ -61,33 +67,35 @@ namespace Gestion_note.Controllers
 
         }
 
-        [Route("Add")]
         [HttpGet]
         public IActionResult Add()
         {
             IEnumerable<Filier> filiers = _filierRepo.GetAll();
-            ViewBag.Filiers = new MultiSelectList(filiers, "FilierID", "FilierName");
-
+            ViewBag.Filier = filiers;
             return View();
         }
 
 
-        [Route("Add")]
         [HttpPost]
-        public IActionResult Add(Student student)
+        public IActionResult Add(string Name,string Password,string Email,string FilierId)
         {
-            if (student.Name != null & student.Email != null)
+
+            Student student = new Student();
+            if (FilierId  != "-1")
             {
                 student.Id = Guid.NewGuid();
-                student.StudentFilier = null;
+                student.Name = Name;
+                student.Email = Email;
+                student.Password = Password;
+                student.StudentFilier = _filierRepo.Get(FilierId);
                 using (_unitOfWork)
                 {
                     _studentRepo.Add(student);
                     _unitOfWork.Complete();
                 }
-
-
             }
+            
+
             return RedirectToAction("Index");
         }
     }

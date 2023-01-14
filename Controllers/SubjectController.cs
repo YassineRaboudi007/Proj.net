@@ -1,5 +1,5 @@
 ﻿using Gestion_note.Data;
-using Gestion_note.Data.NoteRepo;
+using Gestion_note.Data.MatiereRepo;
 using Gestion_note.Data.UnitOfWork;
 using Gestion_note.Models;
 using Microsoft.AspNetCore.Mvc;

@@ -1,8 +1,8 @@
 ﻿using Gestion_note.Models;
 
-namespace Gestion_note.Data.FilierRepository
+namespace Gestion_note.Data.FiliereRepo
 {
-    public interface IFilierRepo : IRepository<Filier>
+    public interface IFiliereRepo : IRepository<Filier>
     {
     }
 }

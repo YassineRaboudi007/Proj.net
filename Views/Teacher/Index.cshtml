@@ -1,36 +1,46 @@
-﻿@model List<Gestion_note.Models.Filier>
+﻿@model List<Gestion_note.Models.Teacher>
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
+<div class="float-end">
+    <button type="button" class="btn btn-success btn-small float-end mx-3" onclick="location.href='@Url.Action("Add", "Subject")'">
+        Add Subject
+    </button>
+</div>
 <table class="table">
     <thead>
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Filier Name</th>
-            <th scope="col">Actions</th>
+            <th scope="col">Teacher Name</th>
+            <th scope="col">Teacher Email</th>
+            <th scope="col">Filier</th>
+            <th scope="col">Matiere</th>
         </tr>
     </thead>
     <tbody>
-        @*
 
-        @foreach(var filier in Model)
+
+        @foreach (var filier in Model)
         {
-            /*
-            <tr>
-                <th scope="row">2</th>
+
+            <tr class="w-100">
                 <td>@filier.Id</td>
                 <td>@filier.Name</td>
-                <td>
-                    <button type="button" class="btn btn-primary">
-                        <a href="/Student/Index" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">See Student List</a>
+                <td>@filier.Coefficent</td>
+                <td class="float-start">
+                    <button type="button" class="btn btn-primary btn-small float-end" onclick="location.href='@Url.Action("Index", "Student")'">
+                        See Student List
+                    </button>
+                    <button type="button" class="btn btn-warning btn-small float-end mx-3" onclick="location.href='@Url.Action("Edit", "Subject",new { id = filier.Id })'">
+                        Edit Subject
                     </button>
                 </td>
             </tr>
-            */
+
         }
-        *@
+
 
     </tbody>
 </table>

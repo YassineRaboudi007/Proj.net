@@ -14,7 +14,7 @@ namespace Gestion_note.Controllers
 
         public IActionResult Add()
         {
-
+            
             return View();
         }
 

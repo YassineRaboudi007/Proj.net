@@ -1,16 +1,16 @@
 ﻿using Gestion_note.Data.Repository;
+using Gestion_note.Data.TeacherRepository;
 using Gestion_note.Models;
 
-namespace Gestion_note.Data.FilierRepository
+namespace Gestion_note.Data.FiliereRepo
 {
-    public class FilierRepo : Repository<Filier>, IFilierRepo
+    public class FiliereRepo : Repository<Filier>, IFiliereRepo
     {
-        private readonly AppDbContext _appDbContext;
-        public FilierRepo(AppDbContext appDbContext) : base(appDbContext)
+        readonly AppDbContext _appDbContext;
+        public FiliereRepo(AppDbContext appDbContext) : base(appDbContext)
         {
             _appDbContext = appDbContext;
         }
-
 
     }
 }

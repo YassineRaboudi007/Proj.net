@@ -14,7 +14,8 @@
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Filier Name</th>
-            <th scope="col" >Actions</th>
+            <th scope="col">Filier Coefficent</th>
+            <th scope="col">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +26,7 @@
             
             <tr class="w-100">
                 <td>@filier.Id</td>
+                <td>@filier.Name</td>
                 <td>@filier.Coefficent</td>
                 <td class="float-start">
                     <button type="button" class="btn btn-primary btn-small float-end" onclick="location.href='@Url.Action("Index", "Student")'">
