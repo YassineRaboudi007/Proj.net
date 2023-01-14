@@ -8,113 +8,113 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Gestion_note
 build_property.RootNamespace = Gestion_note
-build_property.ProjectDir = C:\Users\Dell\Desktop\Learning\Projects\microservices_project\Gestion_note\Gestion_note\
+build_property.ProjectDir = C:\Users\souma\source\Repos3\Proj.net\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Dell\Desktop\Learning\Projects\microservices_project\Gestion_note\Gestion_note
+build_property.MSBuildProjectDirectory = C:\Users\souma\source\Repos3\Proj.net
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Auth/Login.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Auth/SignUp.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Auth/SignUp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxTaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Filier/Add.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Filier/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsaWVyXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Filier/Edit.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Filier/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsaWVyXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Filier/Index.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Filier/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlsaWVyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Home/Index.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Home/Privacy.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Note/Add.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Note/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Note/Index.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Note/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Shared/Error.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Student/Add.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Student/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Student/Edit.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Student/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Student/FilierStudent.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Student/FilierStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxGaWxpZXJTdHVkZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Student/Index.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Student/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Student/Note.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Student/Note.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxOb3RlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Subject/Add.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Subject/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Subject/Edit.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Subject/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Subject/Index.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Subject/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Teacher/Add.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Teacher/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Teacher/Edit.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Teacher/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Teacher/Index.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Teacher/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Teacher/TeacherSubject.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Teacher/TeacherSubject.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxUZWFjaGVyU3ViamVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/_ViewImports.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/_ViewStart.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dell/Desktop/Learning/Projects/microservices_project/Gestion_note/Gestion_note/Views/Shared/_Layout.cshtml]
+[C:/Users/souma/source/Repos3/Proj.net/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-awdu667rqz

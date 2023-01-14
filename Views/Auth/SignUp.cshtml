@@ -42,8 +42,7 @@
 
                 <select multiple id="filierId" name="FilierId" class="form-select mb-3" aria-label="Default select example">
                     <option value="-1">Select A Class</option>
-
-                    @foreach (var filier in ViewBag.Filier)
+                    @foreach (Filier filier in ViewBag.filiers)
                     {
                         <option value="@filier.Id">@filier.Name</option>
                     }

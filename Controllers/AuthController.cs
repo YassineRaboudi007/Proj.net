@@ -93,6 +93,8 @@ namespace Gestion_note.Controllers
         [HttpGet]
         public ActionResult SignUp()
         {
+            IEnumerable< Filier> filiers = _filierRepo.GetAll();
+            ViewBag.filiers = filiers;
             return View();
         }
         [Route("signup")]

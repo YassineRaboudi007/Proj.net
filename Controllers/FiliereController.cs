@@ -18,12 +18,12 @@ namespace Gestion_note.Controllers
         }
 
         [HttpGet]
+        [Route("Index")]
         public IActionResult Index()
         {
             IEnumerable<Filier> allSubjects = _filierRepo.GetAll();
             return View(allSubjects);
         }
-
 
         [HttpGet]
         [Route("Edit/{id}")]
