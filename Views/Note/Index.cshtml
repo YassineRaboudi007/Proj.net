@@ -4,35 +4,54 @@
 *@
 @{
 }
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Type Exam</th>
-            <th scope="col">Note Devoir</th>
-            <th scope="col">Filier</th>
-            <th scope="col">Matiere</th>
-            <th scope="col">Actions</th>
-        </tr>
-    </thead>
-    <tbody>
+<h1>the List of marks For all Students</h1>
+<div class="d-flex justify-content-between">
+    @foreach (var note in Model)
+    {
+        <div class="table-responsive  col-md-6 p-2">
+            <h2 class="sub-header">Mid Term Test</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-md-1">Student</th>
+                        <th class="col-md-2">Matiere</th>
+                        <th class="col-md-3">Mark</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (note.TypeExam == "DS")
+                    {
+                        <tr>
+                            <td class="col-md-1">@note.Student.Name</td>
+                            <td class="col-md-2">@note.Matiere.Name</td>
+                            <td class="col-md-3">@note.NoteDevoir</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive col-md-6 p-2">
+            <h2 class="sub-header">Exam Mark</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-md-1">Student</th>
+                        <th class="col-md-2">Matiere</th>
+                        <th class="col-md-3">Mark</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (note.TypeExam == "Exam")
+                    {
+                        <tr>
+                            <td class="col-md-1">@note.Student.Name</td>
+                            <td class="col-md-2">@note.Matiere.Name</td>
+                            <td class="col-md-3">@note.NoteDevoir</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
 
-
-        @foreach (var note in Model)
-        {
-
-            <tr class="w-100">
-                <td>@note.TypeExam</td>
-                <td>@note.NoteDevoir</td>
-                <td class="float-start">
-                    <button type="button" class="btn btn-warning btn-small float-end mx-3" onclick="location.href='@Url.Action("Edit", "Note" , new { id = note.Id })'">
-                        Edit Note
-                    </button>
-                </td>
-            </tr>
-
-        }
-
-
-    </tbody>
-</table>
+</div>

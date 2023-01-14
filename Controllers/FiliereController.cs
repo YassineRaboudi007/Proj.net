@@ -1,5 +1,6 @@
 ﻿using Gestion_note.Data.FiliereRepo;
 using Gestion_note.Data.NoteRepo;
+using Gestion_note.Data.StudentRepo;
 using Gestion_note.Data.UnitOfWork;
 using Gestion_note.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -11,14 +12,17 @@ namespace Gestion_note.Controllers
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IFiliereRepo _filierRepo;
-        public FilierController(IFiliereRepo matiereRepo, IUnitOfWork unitOfWork)
+        private readonly IStudentRepo _studentRepo;
+        public FilierController(IFiliereRepo matiereRepo, IUnitOfWork unitOfWork,IStudentRepo studentRepo)
         {
             _unitOfWork = unitOfWork;
             _filierRepo = matiereRepo;
+            _studentRepo = studentRepo;
         }
 
         [HttpGet]
         [Route("Index")]
+        [Route("")]
         public IActionResult Index()
         {
             IEnumerable<Filier> allSubjects = _filierRepo.GetAll();
@@ -88,7 +92,16 @@ namespace Gestion_note.Controllers
             }
             return RedirectToAction("Index");
         }
-
+        [Route("SubjectInFilier/{idStudent}/{IdFilier}")]
+        [HttpGet]
+        public IActionResult SubjectInFilier(string idStudent, string IdFilier)
+        {
+            Filier filier = _filierRepo.getFiliereWithMatiere(IdFilier);
+            List<Matiere> matiere= filier.Matieres;
+            Student student = _studentRepo.Get(idStudent);
+            ViewBag.student=student;
+            return View(matiere);
+        }
 
 
     }

@@ -27,6 +27,13 @@ namespace Gestion_note.Data.NoteRepo
                 .ThenInclude(m => m.FilierMatier)
                 .ToList();
         }
+        public IEnumerable<Note> GetAllNoteWithStudent()
+        {
+            return _appDbContext.Notes
+                .Include(n => n.Student)
+                .Include(a=>a.Matiere)
+                .ToList();
+        }
 
         public double GetNoteAvgForMatiere(int idMatiere, string type)
         {

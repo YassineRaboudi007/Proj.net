@@ -5,6 +5,7 @@ using Gestion_note.Data.StudentRepo;
 using Gestion_note.Data.UnitOfWork;
 using Gestion_note.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Diagnostics;
 
 namespace Gestion_note.Controllers
@@ -32,7 +33,7 @@ namespace Gestion_note.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            IEnumerable<Note> allNotes = _noteRepo.GetAllNoteWithFilierAndMatiere();
+            IEnumerable<Note> allNotes = _noteRepo.GetAllNoteWithStudent();
             return View(allNotes);
         }
 
@@ -60,28 +61,30 @@ namespace Gestion_note.Controllers
 
         }
 
-        [Route("Add")]
+        [Route("Add/{idStudent}/{IdMat}")]
         [HttpGet]
-        public IActionResult Add()
+        public IActionResult Add(string idStudent, string IdMat)
         {
+            ViewBag.idStudent = idStudent;
+            ViewBag.idFiliere = IdMat;
             return View();
         }
 
 
-        [Route("Add")]
+        [Route("Add/{idStudent}/{IdMat}")]
         [HttpPost]
-        public IActionResult Add(double NoteDevoir, string TypeExam, string idStudent, string idmatiere)
+        public IActionResult Add(double NoteDevoir, string TypeExam, string idStudent, string IdMat)
         {
             Note note = new Note();
 
-            if (NoteDevoir != null && TypeExam != null && idStudent != "-1" && idmatiere != "-1")
+            if (NoteDevoir != null && TypeExam != null && idStudent != "-1" && IdMat != "-1")
             {
 
                 note.Id = Guid.NewGuid();
                 note.NoteDevoir = NoteDevoir;
                 note.TypeExam = TypeExam;
                 note.Student = _studentRepo.Get(idStudent);
-                note.Matiere = _matiereRepo.Get(idmatiere);
+                note.Matiere = _matiereRepo.Get(IdMat);
                 using (_unitOfWork)
                 {
                     _noteRepo.Add(note);
