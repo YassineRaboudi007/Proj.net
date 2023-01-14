@@ -15,7 +15,19 @@
     <div class="tab-content">
         <div class="tab-pane fade show active d-flex align-items-center flex-column" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
             <img src="~/logo.png" height="150px" width="150px" class="my-5"/>
-            <form class="d-flex flex-column align-items-center">
+            <form class="d-flex flex-column align-items-center" method="post" , asp-controller="Auth" asp-action="login">
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="loginName">Username</label>
+                    <input type="text" name="loginName" id="loginName" class="form-control" />
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="loginPassword">Password</label>
+                    <input type="password" name="loginPassword" id="loginPassword" class="form-control" />
+                </div>
+
                 <label class="form-label float-left" for="loginName">Pick a Role</label>
 
                 <select id="role" name="role" class="form-select mb-3" aria-label="Default select example">
@@ -24,19 +36,7 @@
                     <option value="Teacher">Teacher</option>
                     }
                 </select>
-                <!-- Email input -->
-                <div class="form-outline mb-4">
-                    <input type="email" id="loginName" class="form-control" />
-                    <label class="form-label" for="loginName">Email or username</label>
-                </div>
 
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                    <input type="password" id="loginPassword" class="form-control" />
-                    <label class="form-label" for="loginPassword">Password</label>
-                </div>
-                
-               
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-primary btn-block mb-4">Log in</button>
 

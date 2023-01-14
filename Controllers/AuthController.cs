@@ -44,15 +44,16 @@ namespace Gestion_note.Controllers
                 Student s = null;
                 foreach (Student student in allStudents)
                 {
-                    if ((student.Email == loginName) && (student.Password == loginPassword))
+                    if ((student.Name == loginName) && (student.Password == loginPassword))
                     {
                         s = student;
                     }
                 }
                 if (s != null)
                 {
+                    HttpContext.Session.SetString("Role", "Student");
                     ViewBag.exits = true;
-                    return RedirectToAction("Student/Index");
+                    return RedirectToAction("Index", "Student");
                 }
                 else
                 {
@@ -66,13 +67,14 @@ namespace Gestion_note.Controllers
                 Teacher s = null;
                 foreach (Teacher teacher in allTeachers)
                 {
-                    if ((teacher.Email == loginName) && (teacher.Password == loginPassword))
+                    if ((teacher.Name == loginName) && (teacher.Password == loginPassword))
                     {
                         s = teacher;
                     }
                 }
                 if (s != null)
                 {
+                    HttpContext.Session.SetString("Role", "Teacher");
                     ViewBag.exits = true;
                     return RedirectToAction("Teacher/Index");
                 }
@@ -132,7 +134,7 @@ namespace Gestion_note.Controllers
 
             }
 
-            return View();
+            return View("Auth/Login");
         }
     }
 }

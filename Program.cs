@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Gestion_note.Data.NoteRepo;
 using Gestion_note.Data.MatiereRepo;
 using Gestion_note.Data.TeacherRepository;
+using Microsoft.AspNetCore.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,8 @@ builder.Services.AddTransient<IFiliereRepo, FiliereRepo>();
 builder.Services.AddTransient<IMatiereRepo, MatiereRepo>();
 builder.Services.AddTransient<ITeacherRepo, TeacherRepo>();
 builder.Services.AddTransient<INoteRepo, NoteRepo>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddSession();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PROJ_CONN_STRING"))
 );
@@ -32,6 +35,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
