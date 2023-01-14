@@ -28,10 +28,34 @@
 
             <label class="form-label float-left" for="loginName">Choisir un Filier</label>
 
-            <select id="filierId" name="FilierId" class="form-select mb-3" aria-label="Default select example">
+            <select id="filierId" name="filierIds" class="form-select mb-3" aria-label="Default select example" multiple>
                 <option value="-1">Select A Class</option>
 
-                
+                @foreach (var filier in ViewBag.Filier)
+                {
+
+                    if (Model.Filiers.First().Id == filier.Id)
+                    {
+                        <option value="@filier.Id" selected>@filier.Name</option>
+
+                    }
+                    else
+                    {
+                        <option value="@filier.Id">@filier.Name</option>
+                    }
+                }
+            </select>
+
+
+
+
+            <select id="matiereIds" name="matiereIds" class="form-select mb-3" aria-label="Default select example" multiple>
+                <option value="-1">Select A Class</option>
+
+                @foreach (var matiere in ViewBag.Matiere)
+                {
+                    <option value="@matiere.Id">@matiere.Name</option>
+                }
             </select>
 
             <!-- Submit button -->

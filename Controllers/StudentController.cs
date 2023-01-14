@@ -15,11 +15,13 @@ namespace Gestion_note.Controllers
         private readonly IUnitOfWork _unitOfWork;
         private readonly IStudentRepo _studentRepo;
         private readonly IFiliereRepo _filierRepo;
-        public StudentController(IStudentRepo studentRepo, IUnitOfWork unitOfWork,IFiliereRepo filierRepo)
+        private readonly INoteRepo _noteRepo;
+        public StudentController(IStudentRepo studentRepo, IUnitOfWork unitOfWork,IFiliereRepo filierRepo,INoteRepo noteRepo)
         {
             _unitOfWork = unitOfWork;
             _studentRepo = studentRepo;
             _filierRepo = filierRepo;
+            _noteRepo = noteRepo;
         }
 
         [Route("")]
@@ -102,6 +104,15 @@ namespace Gestion_note.Controllers
             }
 
             return RedirectToAction("Index");
+        }
+
+        [Route("Note/{id}")]
+        [HttpGet]
+        public IActionResult Note(string id)
+        {
+            Student student = _studentRepo.Get(id);
+            IEnumerable<Note> notes = _noteRepo.GetNotesForStudent(student);
+            return View(notes);
         }
     }
 }

@@ -1,0 +1,56 @@
+﻿@model List<Gestion_note.Models.Note>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>the List of marks For all Students</h1>
+<div class="d-flex justify-content-between">
+    @foreach (var note in Model)
+    {
+        <div class="table-responsive  col-md-6 p-2">
+            <h2 class="sub-header">Mid Term Test</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-md-1">Student</th>
+                        <th class="col-md-2">Matiere</th>
+                        <th class="col-md-3">Mark</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (note.TypeExam == "DS"){
+                        <tr>
+                            <td class="col-md-1">@note.Student.Name</td>
+                            <td class="col-md-2">@note.Matiere.Name</td>
+                            <td class="col-md-3">@note.NoteDevoir</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive col-md-6 p-2">
+            <h2 class="sub-header">Exam Mark</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-md-1">Student</th>
+                        <th class="col-md-2">Matiere</th>
+                        <th class="col-md-3">Mark</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (note.TypeExam == "Exam")
+                    {
+                        <tr>
+                            <td class="col-md-1">@note.Student.Name</td>
+                            <td class="col-md-2">@note.Matiere.Name</td>
+                            <td class="col-md-3">@note.NoteDevoir</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+</div>

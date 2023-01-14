@@ -16,6 +16,7 @@ builder.Services.AddTransient<IStudentRepo, StudentRepo>();
 builder.Services.AddTransient<IFiliereRepo, FiliereRepo>();
 builder.Services.AddTransient<IMatiereRepo, MatiereRepo>();
 builder.Services.AddTransient<ITeacherRepo, TeacherRepo>();
+builder.Services.AddTransient<INoteRepo, NoteRepo>();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PROJ_CONN_STRING"))
 );

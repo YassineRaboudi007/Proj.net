@@ -7,5 +7,6 @@ namespace Gestion_note.Data.NoteRepo
         double GetNoteParType(int idStudent,string type);
         double GetNoteAvgForStudent(int idStudent); 
         double GetNoteAvgForMatiere(int idMatiere,string type);
+        IEnumerable<Note> GetNotesForStudent(Student student);
     }
 }

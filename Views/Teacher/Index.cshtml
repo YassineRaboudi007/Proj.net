@@ -20,21 +20,26 @@
         </tr>
     </thead>
     <tbody>
-        @*
+        
         @foreach(var teacher in Model)
         {   
-            <tr class="w-100">
-                <td>@teacher.Id</td>
-                <td>@teacher.Name</td>
-                <td>@teacher.Email</td>
-                <td class="float-start">
-                    <button type="button" class="btn btn-warning btn-small float-end mx-3" onclick="location.href='@Url.Action("Edit", "Teacher" , new { id = teacher.Id })'">
-                        Edit Teacher
-                    </button>
-                </td>
-            </tr>
+                @foreach(var filier in teacher.Filiers){
+                <tr class="w-100">
+
+                    <td>@teacher.Id</td>
+                    <td>@teacher.Name</td>
+                    <td>@teacher.Email</td>
+                    <td>@filier.Name</td>
+                    <td class="float-end">
+                        <button type="button" class="btn btn-warning btn-small float-end mx-3" onclick="location.href='@Url.Action("Edit", "Teacher" , new { id = teacher.Id })'">
+                            Edit Teacher
+                        </button>
+                    </td>
+                </tr>
+
+                }
         }
-        *@
+        
 
     </tbody>
 </table>

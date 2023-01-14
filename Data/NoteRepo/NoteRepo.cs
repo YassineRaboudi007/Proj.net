@@ -40,5 +40,13 @@ namespace Gestion_note.Data.NoteRepo
                 .Where(n => n.Student.Id.ToString() == idStudent.ToString() & n.TypeExam == type)
                 .Select(n => n.NoteDevoir).FirstOrDefault();
         }
+
+        public IEnumerable<Note> GetNotesForStudent(Student student)
+        {
+            return _appDbContext.Notes
+                .Include(n => n.Student)
+                .Include(n => n.Matiere)
+                .Where(n => n.Student == student).ToList();
+        }
     }
 }

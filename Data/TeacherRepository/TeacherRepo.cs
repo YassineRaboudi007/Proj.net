@@ -11,11 +11,29 @@ namespace Gestion_note.Data.TeacherRepository
         {
             _appDbContext = appDbContext;
         }
-        public IEnumerable<Teacher> GetFiliersForTeacher(int teacherID)
+        public Teacher GetFiliersAndMatieresForTeacher(string teacherID)
         {
             return _appDbContext.Teachers
                 .Include(t => t.Filiers)
-                .Where(t => t.Id.ToString() == teacherID.ToString()).ToList();
+                .Include(t => t.Matieres)
+                .Where(t => t.Id.ToString() == teacherID.ToString()).First();
+        }
+
+        public IEnumerable<Teacher> GetTeacherWithFiliersAndMatieres(string id)
+        {
+            return _appDbContext.Teachers
+                .Include(t => t.Filiers)
+                .Include(t => t.Matieres)
+                .Where(t => t.Id == Guid.Parse(id))
+                .ToList();
+        }
+
+        public IEnumerable<Teacher> GetTeachersWithFiliersAndMatieres()
+        {
+            return _appDbContext.Teachers
+                .Include(t => t.Filiers)
+                .Include(t => t.Matieres)
+                .ToList();
         }
     }
 }

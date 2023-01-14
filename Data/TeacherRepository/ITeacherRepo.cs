@@ -4,6 +4,9 @@ namespace Gestion_note.Data.TeacherRepository
 {
     public interface ITeacherRepo : IRepository<Teacher>
     {
-        IEnumerable<Teacher> GetFiliersForTeacher(int teacherID);
+        Teacher GetFiliersAndMatieresForTeacher(string teacherID);
+        IEnumerable<Teacher> GetTeacherWithFiliersAndMatieres(string id);
+        IEnumerable<Teacher> GetTeachersWithFiliersAndMatieres();
+
     }
 }

@@ -8,6 +8,7 @@ using Gestion_note.DTO;
 using Gestion_note.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Linq;
 
 namespace Gestion_note.Controllers
 {
@@ -32,46 +33,58 @@ namespace Gestion_note.Controllers
         public IActionResult Index()
         {
             Console.WriteLine("Index");
-
-            IEnumerable<Teacher> allStudents = _teacherRepo.GetAll();
-            Console.WriteLine("Index",allStudents);
-
+            IEnumerable<Teacher> allStudents = _teacherRepo.GetTeachersWithFiliersAndMatieres();
             return View(allStudents);
         }
 
 
-            /*
+            
         
         [HttpGet]
         [Route("Edit/{id}")]
         public IActionResult Edit(string id)
         {
             Console.WriteLine("Edit");
-            Student student = _teacherRepo.GetFiliersForTeacher(id);
-            Console.WriteLine(student);
+            Teacher teacher = _teacherRepo.GetFiliersAndMatieresForTeacher(id);
             IEnumerable<Filier> filiers = _filierRepo.GetAll();
             ViewBag.Filier = filiers;
-            return View(student);
+            IEnumerable<Matiere> matieres = _matiereRepo.GetAll();
+            ViewBag.Matiere = matieres;
+            return View(teacher);
         
             }
-            */
+            
         [HttpPost]
         [Route("Edit/{id}")]
-        public IActionResult Edit(Teacher teacher, string FilierId, string id)
+        public IActionResult Edit(Teacher teacher, string[] matiereIds, string[] filierIds, string id)
         {
             Teacher currTeacher = _teacherRepo.Get(id);
             currTeacher.Name = teacher.Name;
             currTeacher.Email = teacher.Email;
             currTeacher.Password = teacher.Password;
             currTeacher.Email = teacher.Email;
-
-            if (FilierId == "-1")
+            List<Filier> filiers = new List<Filier>();
+            for (int i = 0; i < filierIds.Length; i++)
             {
+                Filier filier = _filierRepo.Find(f => f.Id.ToString() == filierIds[i]).First();
+                if (filier != null)
+                {
+                    filiers.Add(filier);
+                }
             }
-            else
-            {
 
+            List<Matiere> mats = new List<Matiere>();
+            for (int i = 0; i < matiereIds.Length; i++)
+            {
+                Matiere matiere = _matiereRepo.Find(f => f.Id.ToString() == filierIds[i]).FirstOrDefault();
+                if (matiere != null)
+                {
+                    mats.Add(matiere);
+                }
             }
+
+            currTeacher.Filiers = filiers;
+            currTeacher.Matieres = mats;
             using (_unitOfWork)
             {
                 _unitOfWork.Complete();
@@ -92,26 +105,58 @@ namespace Gestion_note.Controllers
             return View();
         }
 
+
+        [Route("TeacherSubject")]
+        [HttpGet]
+        public ActionResult TeacherSubject(string id)
+        {
+            IEnumerable<Teacher> teachers = _teacherRepo.GetTeacherWithFiliersAndMatieres(id);
+            return View(teachers);
+        }
+
         [Route("Add")]
         [HttpPost]
-        public IActionResult Add(string Name, string Password, string Email, string FilierId)
+        public IActionResult Add(Teacher teacher, string[] matiereIds, string[] filierIds, string id)
         {
-
-            Teacher student = new Teacher();
-            if (FilierId != "-1")
+            Console.WriteLine("matiereIds", matiereIds);
+            Console.WriteLine("filierIds", filierIds);
+            Teacher currTeacher = new Teacher();
+            currTeacher.Name = teacher.Name;
+            currTeacher.Email = teacher.Email;
+            currTeacher.Password = teacher.Password;
+            currTeacher.Email = teacher.Email;
+            List<Filier> filiers = new List<Filier>();
+            for (int i = 0; i < filierIds.Length; i++)
             {
-                student.Id = Guid.NewGuid();
-                student.Name = Name;
-                student.Email = Email;
-                student.Password = Password;
-                using (_unitOfWork)
+                Filier filier = _filierRepo.Find(f => f.Id.ToString() == filierIds[i]).First();
+                if (filier != null)
                 {
-                    _teacherRepo.Add(student);
-                    _unitOfWork.Complete();
+                    filiers.Add(filier);
                 }
             }
 
+            List<Matiere> mats = new List<Matiere>();
+            for (int i = 0; i < matiereIds.Length; i++)
+            {
+                Matiere matiere= _matiereRepo.Find(f => f.Id.ToString() == filierIds[i]).FirstOrDefault();
+                if (matiere != null)
+                {
+                    mats.Add(matiere);
+                }
+            }
+
+            currTeacher.Filiers = filiers;
+            currTeacher.Matieres = mats;
+
+
+
+            using (_unitOfWork)
+            {
+                _teacherRepo.Add(currTeacher);
+                _unitOfWork.Complete();
+            }
             return RedirectToAction("Index");
         }
+
     }
 }
