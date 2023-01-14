@@ -21,8 +21,18 @@
                 <input type="number" id="loginName" class="form-control" asp-for="Coefficent" />
             </div>
 
+            <select id="filierId" name="FilierId" class="form-select mb-3" aria-label="Default select example">
+                <option value="-1" selected>Select A Filier</option>
+
+                @foreach (var filier in ViewBag.filiers)
+                {
+                    <option value="@filier.Id">@filier.Name</option>
+                }
+            </select>
+
+
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4 w-100">Add Teacher</button>
+            <button type="submit" class="btn btn-primary btn-block mb-4 w-100">Add Subject</button>
         </form>
     </div>
 

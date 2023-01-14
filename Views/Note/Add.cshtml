@@ -2,7 +2,7 @@
 @{
 }
 <div class="d-flex align-items-center justify-content-center my-3">
-    <h3>Add Subject</h3>
+    <h3>Add mark</h3>
 </div>
 <div class="container-sm ">
     <!-- Pills navs -->
@@ -12,17 +12,21 @@
         <form class="d-flex flex-column align-items-center w-100" method="post">
             <!-- Email input -->
             <div class="form-outline mb-4 w-100">
-                <label class="form-label" for="loginName">Name</label>
-                <input type="text" id="loginName" class="form-control" asp-for="NoteDevoir" />
+                <label class="form-label" for="NoteDevoir">Mark</label>
+                <input type="number" id="NoteDevoir" class="form-control" asp-for="NoteDevoir" />
             </div>
 
             <div class="form-outline mb-4 w-100">
-                <label class="form-label" for="loginName">Coefficent</label>
-                <input type="number" id="loginName" class="form-control" asp-for="TypeExam" />
+                <label class="form-label" for="TypeExam">Type Examen</label>
+                <select id="TypeExam" name="TypeExam" class="form-select mb-3" aria-label="Default select example">
+                    <option value="-1">Select Type</option>
+                    <option value="Exam">Exam</option>
+                    <option value="DS">DS</option>
+                </select>
             </div>
 
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4 w-100">Add Teacher</button>
+            <button type="submit" class="btn btn-primary btn-block mb-4 w-100">Add Mark</button>
         </form>
     </div>
 

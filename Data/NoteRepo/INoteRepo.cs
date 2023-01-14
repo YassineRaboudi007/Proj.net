@@ -8,5 +8,7 @@ namespace Gestion_note.Data.NoteRepo
         double GetNoteAvgForStudent(int idStudent); 
         double GetNoteAvgForMatiere(int idMatiere,string type);
         IEnumerable<Note> GetNotesForStudent(Student student);
+        IEnumerable<Note> GetAllNoteWithFilierAndMatiere();
+
     }
 }

@@ -32,7 +32,7 @@ namespace Gestion_note.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            IEnumerable<Note> allNotes = _noteRepo.GetAll();
+            IEnumerable<Note> allNotes = _noteRepo.GetAllNoteWithFilierAndMatiere();
             return View(allNotes);
         }
 

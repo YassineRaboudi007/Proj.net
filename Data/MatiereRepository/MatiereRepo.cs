@@ -12,5 +12,10 @@ namespace Gestion_note.Data.MatiereRepo
             _appDbContext = appDbContext;
         }
 
+        public IEnumerable<Matiere> GetAllSubjectsWithFilier()
+        {
+            return _appDbContext.Matieres.Include(m => m.FilierMatier).ToList();
+        }
+
     }
 }

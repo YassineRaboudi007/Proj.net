@@ -1,5 +1,38 @@
-﻿@*
+﻿@model List<Gestion_note.Models.Note>
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Type Exam</th>
+            <th scope="col">Note Devoir</th>
+            <th scope="col">Filier</th>
+            <th scope="col">Matiere</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var note in Model)
+        {
+
+            <tr class="w-100">
+                <td>@note.TypeExam</td>
+                <td>@note.NoteDevoir</td>
+                <td class="float-start">
+                    <button type="button" class="btn btn-warning btn-small float-end mx-3" onclick="location.href='@Url.Action("Edit", "Note" , new { id = note.Id })'">
+                        Edit Note
+                    </button>
+                </td>
+            </tr>
+
+        }
+
+
+    </tbody>
+</table>

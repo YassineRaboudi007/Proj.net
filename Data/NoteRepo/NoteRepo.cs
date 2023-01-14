@@ -20,6 +20,14 @@ namespace Gestion_note.Data.NoteRepo
                 .Select(n => n.NoteDevoir).FirstOrDefault();
         }
 
+        public IEnumerable<Note> GetAllNoteWithFilierAndMatiere()
+        {
+            return _appDbContext.Notes
+                .Include(n => n.Matiere)
+                .ThenInclude(m => m.FilierMatier)
+                .ToList();
+        }
+
         public double GetNoteAvgForMatiere(int idMatiere, string type)
         {
             throw new NotImplementedException();

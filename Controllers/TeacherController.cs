@@ -106,7 +106,7 @@ namespace Gestion_note.Controllers
         }
 
 
-        [Route("TeacherSubject")]
+        [Route("TeacherSubject/{id}")]
         [HttpGet]
         public ActionResult TeacherSubject(string id)
         {

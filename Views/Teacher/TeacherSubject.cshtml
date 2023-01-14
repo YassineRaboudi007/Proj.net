@@ -1,0 +1,39 @@
+﻿@model List<Gestion_note.Models.Teacher>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="float-Start">
+    <h1>List of subjects and filiere</h1>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Subject</th>
+            <th scope="col">Filiere</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var teacher in Model)
+        {
+            @foreach (var matiere in teacher.Matieres){
+                @foreach (var filier in teacher.Filiers){
+                    <tr class="w-100">
+                        <td>@matiere.Name</td> /* lena bch t7ot matiere */
+                        <td>@filier.Name</td> /* lena bch t7ot matiere */
+                        <td class="float-start">
+                            // fil boutoun bch n3diw id mta3 filiere //
+                            <button type="button" class="btn btn-warning btn-small float-end mx-3" onclick="location.href='@Url.Action("Edit", "Teacher" , new { id = teacher.Id })'">
+                                List Of Students
+                            </button>
+                        </td>
+                    </tr>
+                }
+                
+            }
+            
+        }
+    </tbody>
+</table>
