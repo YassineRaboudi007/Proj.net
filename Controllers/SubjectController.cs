@@ -17,6 +17,8 @@ namespace Gestion_note.Controllers
             _matiereRepo = matiereRepo;
         }
 
+        [Route("")]
+        [Route("Index")]
         [HttpGet]
         public IActionResult Index()
         {

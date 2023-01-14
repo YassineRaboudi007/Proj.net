@@ -31,18 +31,8 @@
             <select id="filierId" name="FilierId" class="form-select mb-3" aria-label="Default select example">
                 <option value="-1">Select A Class</option>
 
-                @foreach (var filier in ViewBag.Filier)
-                {
-                    if (Model.StudentFilier.Id == filier.Id){
-                        <option value="@filier.Id" selected>@filier.Name</option>
-
-                    }else{
-                        <option value="@filier.Id">@filier.Name</option>
-
-                    }
-                }
+                
             </select>
-            <h1>lol</h1>
 
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-block mb-4 w-100">Add Teacher</button>
