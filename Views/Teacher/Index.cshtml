@@ -5,29 +5,36 @@
 @{
 }
 <div class="float-end">
-    <button type="button" class="btn btn-success btn-small float-end mx-3" onclick="location.href='@Url.Action("Add", "Student")'">
-        Add Student
+    <button type="button" class="btn btn-success btn-small float-end mx-3" onclick="location.href='@Url.Action("Add", "Teacher")'">
+        Add Teacher
     </button>
 </div>
 <table class="table">
     <thead>
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Student Name</th>
-            <th scope="col">Student Email</th>
-            <th scope="col">Student Filier</th>
+            <th scope="col">Teacher Name</th>
+            <th scope="col">Teacher Email</th>
+            <th scope="col">Teacher Filier</th>
             <th scope="col">Actions</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-
-    <td scope="col">Id</td>
-    <td scope="col">Name</td>
-    <td scope="col">Email</td>
-    <td scope="col">Filier</td>
-    <td scope="col">Actions</td>
-        </tr>
+        @*
+        @foreach(var teacher in Model)
+        {   
+            <tr class="w-100">
+                <td>@teacher.Id</td>
+                <td>@teacher.Name</td>
+                <td>@teacher.Email</td>
+                <td class="float-start">
+                    <button type="button" class="btn btn-warning btn-small float-end mx-3" onclick="location.href='@Url.Action("Edit", "Teacher" , new { id = teacher.Id })'">
+                        Edit Teacher
+                    </button>
+                </td>
+            </tr>
+        }
+        *@
 
     </tbody>
 </table>

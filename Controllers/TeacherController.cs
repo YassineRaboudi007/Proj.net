@@ -1,4 +1,5 @@
 ﻿using Gestion_note.Data.FiliereRepo;
+using Gestion_note.Data.MatiereRepo;
 using Gestion_note.Data.NoteRepo;
 using Gestion_note.Data.StudentRepo;
 using Gestion_note.Data.TeacherRepository;
@@ -16,8 +17,10 @@ namespace Gestion_note.Controllers
         private readonly IUnitOfWork _unitOfWork;
         private readonly ITeacherRepo _teacherRepo;
         private readonly IFiliereRepo _filierRepo;
-        public TeacherController(ITeacherRepo teacherRepo, IUnitOfWork unitOfWork, IFiliereRepo filierRepo)
+        private readonly IMatiereRepo _matiereRepo;
+        public TeacherController(IMatiereRepo matiereRepo, ITeacherRepo teacherRepo, IUnitOfWork unitOfWork, IFiliereRepo filierRepo)
         {
+            _matiereRepo = matiereRepo;
             _unitOfWork = unitOfWork;
             _teacherRepo = teacherRepo;
             _filierRepo = filierRepo;
@@ -84,6 +87,8 @@ namespace Gestion_note.Controllers
             Console.WriteLine("Add");
             IEnumerable<Filier> filiers = _filierRepo.GetAll();
             ViewBag.Filier = filiers;
+            IEnumerable<Matiere> matieres = _matiereRepo.GetAll();
+            ViewBag.Matiere = matieres;
             return View();
         }
 

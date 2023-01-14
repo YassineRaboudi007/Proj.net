@@ -1,15 +1,15 @@
-﻿@model Gestion_note.DTO.StudentAddDTO
+﻿@model Gestion_note.Models.Teacher
 @{
 }
 <div class="d-flex align-items-center justify-content-center my-3">
-    <h3>Add Student</h3>
+    <h3>Add Teacher</h3>
 </div>
 <div class="container-sm ">
     <!-- Pills navs -->
     <!-- Pills content -->
 
     <div class="tab-pane fade show active d-flex align-items-center flex-column justify-content-center" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-        <form class="d-flex flex-column align-items-center w-100" method="post" asp-controller="Student" asp-action="Add">
+        <form class="d-flex flex-column align-items-center w-100" method="post" asp-controller="Teacher" asp-action="Add">
             <!-- Email input -->
             <div class="form-outline mb-4 w-100">
                 <label class="form-label" for="loginName">Name</label>
@@ -28,11 +28,22 @@
 
             <label class="form-label float-left" for="loginName">Choisir un Filier</label>
 
-            <select id="filierId" asp-for="FilierId" name="FilierId" class="form-select mb-3" aria-label="Default select example">
+            <select id="filierId" name="FilierIds" class="form-select mb-3" aria-label="Default select example" multiple>
                 <option value="-1">Select A Class</option>
 
-                @foreach(var filier in ViewBag.Filier){
+                @foreach (var filier in ViewBag.Filier)
+                {
                     <option value="@filier.Id">@filier.Name</option>
+                }
+            </select>
+
+
+            <select id="filierId" name="matiereIds" class="form-select mb-3" aria-label="Default select example" multiple>
+                <option value="-1">Select A Class</option>
+
+                @foreach (var matiere in ViewBag.Matiere)
+                {
+                    <option value="@matiere.Id">@matiere.Name</option>
                 }
             </select>
             
