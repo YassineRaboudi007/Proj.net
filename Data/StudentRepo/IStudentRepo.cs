@@ -6,5 +6,10 @@ namespace Gestion_note.Data.StudentRepo
     {
         IEnumerable<Student> GetStudentsWithFilier();
         Student GetStudentWithFilier(string id);
+        IEnumerable<Student> GetStudentsForFiliere(string id);
+
+
     }
+
+
 }

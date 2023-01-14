@@ -114,5 +114,26 @@ namespace Gestion_note.Controllers
             IEnumerable<Note> notes = _noteRepo.GetNotesForStudent(student);
             return View(notes);
         }
+
+        [HttpGet]
+        [Route("FilierStudent/{id}")]
+        public ActionResult FilierStudent(string id)
+        {
+            IEnumerable<Student> students = _studentRepo.GetStudentsForFiliere(id);
+            return View(students);
+        }
+
+        [Route("Delete/{id}")]
+        [HttpGet]
+        public IActionResult Delete(string id)
+        {
+            Student student = _studentRepo.Get(id);
+            using (_unitOfWork)
+            {
+                _studentRepo.Remove(student);
+                _unitOfWork.Complete();
+            }
+            return RedirectToAction("Index");
+        }
     }
 }

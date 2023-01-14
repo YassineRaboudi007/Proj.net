@@ -12,13 +12,20 @@
             <img src="~/logo.png" height="150px" width="150px" class="my-5" />
             <form class="d-flex flex-column align-items-center" action="post">
                 <!-- Email input -->
+                <label class="form-label float-left" for="loginName">Pick a Role</label>
+                <select id="role" name="role" class="form-select mb-3" aria-label="Default select example">
+                    <option value="-1">Select A Role </option>
+                    <option value="Student">Student</option>
+                    <option value="Teacher">Teacher</option>
+                    }
+                </select>
                 <div class="form-outline mb-4">
                     <input type="text" id="loginName" class="form-control" />
                     <label class="form-label" for="loginName">Username</label>
                 </div>
                 <div class="form-outline mb-4">
-                    <input type="email" id="loginName" class="form-control" />
-                    <label class="form-label" for="loginName">Email</label>
+                    <input type="email" id="loginEmail" class="form-control" />
+                    <label class="form-label" for="loginEmail">Email</label>
                 </div>
 
                 <!-- Password input -->
@@ -31,6 +38,16 @@
                     <label class="form-label" for="loginPassword">Confirm Password</label>
                 </div>
 
+                <label class="form-label float-left" for="loginName">Choisir une Filier</label>
+
+                <select multiple id="filierId" name="FilierId" class="form-select mb-3" aria-label="Default select example">
+                    <option value="-1">Select A Class</option>
+
+                    @foreach (var filier in ViewBag.Filier)
+                    {
+                        <option value="@filier.Id">@filier.Name</option>
+                    }
+                </select>
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
 

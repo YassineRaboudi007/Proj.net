@@ -27,7 +27,13 @@ namespace Gestion_note.Data.StudentRepo
             return _appDbContext.Students
                 .Include(s => s.StudentFilier)
                 .ThenInclude(f => f.Matieres).ToList();
-                
+        }
+
+        public IEnumerable<Student> GetStudentsForFiliere(string id)
+        {
+            return _appDbContext.Students
+                .Include(s => s.StudentFilier)
+                .Where(s => s.StudentFilier.Id == Guid.Parse(id)).ToList();
         }
 
     }

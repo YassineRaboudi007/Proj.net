@@ -1,0 +1,38 @@
+﻿
+@model List<Gestion_note.Models.Student>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="float-start mx-3">
+    <h1>List of student in this filiere</h1>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Student Email</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+
+            <tr class="w-100">
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Email</td>
+                <td>@student.StudentFilier.Name</td>
+                <td class="float-start">
+                    <button type="button" class="btn btn-warning btn-small float-end mx-3" onclick="location.href='@Url.Action("Add", "Note" , new { idStudent = student ,IdMatiere= student/*bch nzid matiere hedhi lel étduiant*/  })'">
+                        Add Note
+                    </button>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

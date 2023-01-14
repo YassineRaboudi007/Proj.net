@@ -21,34 +21,32 @@
     </thead>
     <tbody>
         
+            @foreach (var subject in Model)
+            {
 
-        @foreach(var subject in Model)
-        {
-            
-                @foreach (var fileir in subject.FilierMatier){
-                <tr class="w-100">
+                @foreach (var fileir in subject.FilierMatier)
+                {
+                    <tr class="w-100">
 
-                    <td>@subject.Id</td>
-                    <td>@subject.Name</td>
-                    <td>@subject.Coefficent</td>
-                    <td>@fileir.Name</td>
-                    <td class="float-start">
-                        <button type="button" class="btn btn-warning btn-small float-end mx-3" onclick="location.href='@Url.Action("Edit", "Subject",new { id = subject.Id })'">
-                            Edit Subject
-                        </button>
-
-                        @*
-                        <button type="button" class="btn btn-primary btn-small float-end" onclick="location.href='@Url.Action("Index", "Student")'">
-                            See Student List
-                        </button>
-                
-                        *@
-                    </td>
-                </tr>
+                        <td>@subject.Id</td>
+                        <td>@subject.Name</td>
+                        <td>@subject.Coefficent</td>
+                        <td>@fileir.Name</td>
+                        <td class="float-start">
+                            <button type="button" class="btn btn-warning btn-small float-end mx-3" onclick="location.href='@Url.Action("Edit", "Subject",new { id = subject.Id })'">
+                                Edit Subject
+                            </button>
+                            <button type="button" class="btn btn-danger btn-small float-end mx-3" onclick="location.href='@Url.Action("Delete", "Subject",new { id = subject.Id })'">
+                                Delete Subject
+                            </button>
+                        </td>
+                    </tr>
 
                 }
-            
-        }
+
+            }
+
+
         
 
     </tbody>

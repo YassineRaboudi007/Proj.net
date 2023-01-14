@@ -112,6 +112,19 @@ namespace Gestion_note.Controllers
             return RedirectToAction("Index");
         }
 
+        [Route("Delete/{id}")]
+        [HttpGet]
+        public IActionResult Delete(string id)
+        {
+            Matiere subject = _matiereRepo.Get(id);
+            using (_unitOfWork)
+            {
+                _matiereRepo.Remove(subject);
+                _unitOfWork.Complete();
+            }
+            return RedirectToAction("Index");
+        }
+
 
     }
 }

@@ -76,5 +76,20 @@ namespace Gestion_note.Controllers
         }
 
 
+        [Route("Delete/{id}")]
+        [HttpGet]
+        public IActionResult Delete(string id)
+        {
+            Filier filierToDelete = _filierRepo.Get(id);
+            using (_unitOfWork)
+            {
+                _filierRepo.Remove(filierToDelete);
+                _unitOfWork.Complete();
+            }
+            return RedirectToAction("Index");
+        }
+
+
+
     }
 }
