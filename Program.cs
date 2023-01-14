@@ -5,6 +5,7 @@ using Gestion_note.Data.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using Gestion_note.Data.NoteRepo;
 using Gestion_note.Data.MatiereRepo;
+using Gestion_note.Data.TeacherRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,7 @@ builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IStudentRepo, StudentRepo>();
 builder.Services.AddTransient<IFiliereRepo, FiliereRepo>();
 builder.Services.AddTransient<IMatiereRepo, MatiereRepo>();
+builder.Services.AddTransient<ITeacherRepo, TeacherRepo>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PROJ_CONN_STRING"))

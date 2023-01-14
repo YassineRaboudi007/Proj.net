@@ -10,9 +10,9 @@ namespace Gestion_note.Data
         }
 
         public DbSet<Note> Notes{ get; set; }
-        public DbSet<Teacher> Teachers{ get; set; }
-        public DbSet<Student> Students{ get; set; }
-        public DbSet<Matiere> Matieres{ get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Matiere> Matieres { get; set; }
         public DbSet<Filier> Filiers { get; set; }
 }
 }

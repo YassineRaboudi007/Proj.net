@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Gestion_note.Controllers
 {
+    [Route("Student")]
     public class StudentController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -21,6 +22,8 @@ namespace Gestion_note.Controllers
             _filierRepo = filierRepo;
         }
 
+        [Route("")]
+        [Route("Index")]
         [HttpGet]
         public IActionResult Index()
         {
@@ -33,6 +36,7 @@ namespace Gestion_note.Controllers
         [Route("Edit/{id}")]
         public IActionResult Edit(string id)
         {
+            Console.WriteLine("Edit");
             Student student = _studentRepo.GetStudentWithFilier(id);
             Console.WriteLine(student);
             IEnumerable<Filier> filiers = _filierRepo.GetAll();
@@ -48,17 +52,17 @@ namespace Gestion_note.Controllers
             currStudent.Name = student.Name;
             currStudent.Email = student.Email;
             currStudent.Password = student.Password;
+            currStudent.Email = student.Email;
+
             if (FilierId == "-1")
             {
-                student.StudentFilier = null;
+                currStudent.StudentFilier = null;
             }
             else
             {
-                student.StudentFilier = _filierRepo.Get(FilierId);
+                currStudent.StudentFilier = _filierRepo.Get(FilierId);
 
-                student.StudentFilier = null;
             }
-            currStudent.Email = student.Email;
             using (_unitOfWork)
             {
                 _unitOfWork.Complete();
@@ -67,15 +71,17 @@ namespace Gestion_note.Controllers
 
         }
 
+        [Route("Add")]
         [HttpGet]
         public IActionResult Add()
         {
+            Console.WriteLine("Add");
             IEnumerable<Filier> filiers = _filierRepo.GetAll();
             ViewBag.Filier = filiers;
             return View();
         }
 
-
+        [Route("Add")]
         [HttpPost]
         public IActionResult Add(string Name,string Password,string Email,string FilierId)
         {
@@ -94,7 +100,6 @@ namespace Gestion_note.Controllers
                     _unitOfWork.Complete();
                 }
             }
-            
 
             return RedirectToAction("Index");
         }

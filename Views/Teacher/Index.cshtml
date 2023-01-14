@@ -5,42 +5,29 @@
 @{
 }
 <div class="float-end">
-    <button type="button" class="btn btn-success btn-small float-end mx-3" onclick="location.href='@Url.Action("Add", "Subject")'">
-        Add Subject
+    <button type="button" class="btn btn-success btn-small float-end mx-3" onclick="location.href='@Url.Action("Add", "Student")'">
+        Add Student
     </button>
 </div>
 <table class="table">
     <thead>
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Teacher Name</th>
-            <th scope="col">Teacher Email</th>
-            <th scope="col">Filier</th>
-            <th scope="col">Matiere</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Student Email</th>
+            <th scope="col">Student Filier</th>
+            <th scope="col">Actions</th>
         </tr>
     </thead>
     <tbody>
+        <tr>
 
-
-        @foreach (var filier in Model)
-        {
-
-            <tr class="w-100">
-                <td>@filier.Id</td>
-                <td>@filier.Name</td>
-                <td>@filier.Coefficent</td>
-                <td class="float-start">
-                    <button type="button" class="btn btn-primary btn-small float-end" onclick="location.href='@Url.Action("Index", "Student")'">
-                        See Student List
-                    </button>
-                    <button type="button" class="btn btn-warning btn-small float-end mx-3" onclick="location.href='@Url.Action("Edit", "Subject",new { id = filier.Id })'">
-                        Edit Subject
-                    </button>
-                </td>
-            </tr>
-
-        }
-
+    <td scope="col">Id</td>
+    <td scope="col">Name</td>
+    <td scope="col">Email</td>
+    <td scope="col">Filier</td>
+    <td scope="col">Actions</td>
+        </tr>
 
     </tbody>
 </table>
